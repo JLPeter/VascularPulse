@@ -3,7 +3,7 @@ from huggingface_hub import InferenceClient
 
 st.set_page_config(page_title="Chatbot")
 st.title("Medical Questions? Ask the Chatbot.")
-st.caption("Powered by Hugging Face Inference API using Qwen2.5. Please note that this model is an LLM and may produce "
+st.caption("Powered by Hugging Face Inference API using Qwen2.5. Please note that this chatbot is an LLM and may produce "
            "factually incorrect or logically inconsistent responses. Always verify generated content for accuracy.")
 
 #HuggingFace API
@@ -42,5 +42,6 @@ if prompt := st.chat_input("Type your message here..."):
             response = get_chat_response(prompt)
         st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
+
 
 
